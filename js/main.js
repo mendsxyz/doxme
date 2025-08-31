@@ -29,12 +29,12 @@ if (input) {
 const encryptionForm = document.querySelector('#test-encryption-form');
 
 if (encryptionForm) {
-  encryptionForm.addEventListener('submit', () => {
+  encryptionForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Encryption Values
     const testId = document.querySelector('#test-id').value.trim();
-    const testName = document.querySelector('#test-name').value;
+    const testName = document.querySelector('#test-name').dataset.encrypted;
     
     // Value View
     alert(`Your Encryption Details: \n Test Id: ${testId} \n Test Name: ${testName}`);
