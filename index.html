@@ -30,7 +30,8 @@
     button:active,
     button:focus {
       background: #7A7A7A!important;
-      border: 1px solid #000;
+      color: #ffffff!important;
+      border: 1px solid #000!important;
     }
     button * {
       color: inherit;
@@ -79,7 +80,7 @@
     }
     main {
       width: 100%;
-      height: 100vh;
+      min-height: 95vh;
       padding: 2rem 1rem;
       display: flex;
       align-items: center;
@@ -145,13 +146,13 @@
       padding: 0.3rem 0.6rem;
     }
     #create-encryption-btn {
-      background: #25A247;
-      color: #FFFFFF;
+      background: transparent;
+      color: #272727;
       font-weight: bold;
       min-width: 180px;
       height: 40px;
       padding: 0 1rem;
-      border: none;
+      border: 1px solid #cccccc;
       border-radius: .6rem;
     }
   </style>
@@ -167,13 +168,19 @@
       <input type="text" name="testId" id="test-id" placeholder="User Id">
       <input type="text" data-encrypted="" name="testName" id="test-name" placeholder="Password">
       <button id="review-encryption-btn">Sign On</button>
-      <a href="">Forgotten Password?</a>
+      <a style="font-size: 0.9em;" href="#">Forgotten Password?</a>
       <div class="divider" style="position: relative; width: 100%; height: 30px; display: flex; align-items: center; justify-content: center;">
         <p>Or</p>
       </div>
       <button type="button" id="create-encryption-btn">Create New Account</button>
     </form>
   </main>
+  <footer style="background: #272727; color: #eeeeee; min-height: 5vh; padding: 2rem; border-top: 1px solid #cccccc;">
+    <p style="font-size: 0.8em">
+      Your data is end-to-end encrypted on this model and is used to keep real accounts safe from any possible compromise by phishing and 
+      other related attacks. We do not store your information for any reason and you must not share your information with anyone either.
+    </p>
+  </footer>
   
   <script src="/js/main.js"></script>
 </body>
