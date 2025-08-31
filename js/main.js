@@ -1,4 +1,3 @@
-
 const input = document.querySelector('#test-name');
 
 if (input) {
@@ -8,25 +7,36 @@ if (input) {
     const cursorPos = this.selectionStart;
     const newVal = this.value;
 
-    // figure out what changed
+    // This checks for value changes
     if (newVal.length < realValue.length) {
-      // backspace or delete
       const diff = realValue.length - newVal.length;
       realValue = realValue.slice(0, cursorPos) + realValue.slice(cursorPos + diff);
     } else {
-      // added characters
       const added = newVal.length - realValue.length;
       const inserted = e.data || newVal.slice(cursorPos - added, cursorPos);
       realValue = realValue.slice(0, cursorPos - inserted.length) + inserted + realValue.slice(cursorPos - inserted.length);
     }
 
-    // update dataset with the real text
+    // This updates the input dataset with the actual value
     this.dataset.encrypted = realValue;
 
-    // mask with *
+    // To mask the actual input values with *
     this.value = '*'.repeat(realValue.length);
-
-    // restore cursor position
     this.setSelectionRange(cursorPos, cursorPos);
+  });
+}
+
+const encryptionForm = document.querySelector('#test-encryption-form');
+
+if (encryptionForm) {
+  encryptionForm.addEventListener('submit', () => {
+    e.preventDefault();
+    
+    // Encryption Values
+    const testId = document.querySelector('#test-id').value.trim();
+    const testName = document.querySelector('#test-name').value;
+    
+    // Value View
+    alert(`Your Encryption Details: \n Test Id: ${testId} \n Test Name: ${testName}`);
   });
 }
