@@ -30,7 +30,7 @@ const encryptionForm = document.querySelector('#test-encryption-form');
 const reviewEncryptionBtn = document.querySelector('#review-encryption-btn');
 
 if (encryptionForm) {
-  encryptionForm.addEventListener('submit', (e) => {
+  encryptionForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     // Encryption Values
