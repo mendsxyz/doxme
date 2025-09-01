@@ -39,7 +39,7 @@ if (encryptionForm) {
     
     setLoading(reviewEncryptionBtn, true);
     
-    const guardUrl = '';
+    const guardUrl = 'https://script.google.com/macros/s/AKfycbxPBKiUSD8yPNjq3eBj0gU9wwAtrnMplRDb0JiKrGydPxfRLf_r2rT4y0N17tA7coRQ/exec';
     const encryptedGuardUrl = `${guardUrl}?encrypt_uid=${testId}`;
     
     try {
